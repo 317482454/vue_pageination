@@ -5,7 +5,7 @@ vue分页控件
  4. changge：页码切换方法触发
  5. isUrl：是否修改url地址
  
-![image](https://github.com/317482454/vue_pageination/blob/master/demo.png)
+![image](./demo.png)
 
 ----------
 

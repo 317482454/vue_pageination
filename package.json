@@ -1,6 +1,6 @@
 {
   "name": "vue_pageination",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "main": "pageination.js",
   "description": "vue2.0分页",
   "scripts": {
