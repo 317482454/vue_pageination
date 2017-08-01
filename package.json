@@ -1,0 +1,13 @@
+{
+  "name": "vue_pageination",
+  "version": "1.0.2",
+  "main": "pageination.js",
+  "description": "vue2.0分页",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "author": "317482454",
+  "license": "MIT"
+}
