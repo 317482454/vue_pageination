@@ -9,7 +9,23 @@ vue分页控件
         this.page = val;
       }
 
- 5. isUrl：是否修改url地址
+ 5.搜索执行
+
+     query(){
+            if (this.param.page == 1) {
+              this.pageFn(1);
+            } else {
+              this.param.page = 1;
+            }
+          }`
+ 
+6.重置
+
+
+     reset(){
+            this.pageFn(1);
+     }//重置
+7.isUrl：是否修改url地址
 
 ![image](./demo.png)
 
