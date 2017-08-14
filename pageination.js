@@ -1,10 +1,17 @@
-/**
- * Created by zhanghuasheng on 2017/7/31.
- */
-import  to from './pageination.vue'
+'use strict';
 
-export default  {
-  install (Vue) {
-    Vue.component(to.name, to);
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _pageination = require('./pageination.vue');
+
+var _pageination2 = _interopRequireDefault(_pageination);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  install: function install(Vue) {
+    Vue.component(_pageination2.default.name, _pageination2.default);
   }
-}
+};
