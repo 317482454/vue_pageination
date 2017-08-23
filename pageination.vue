@@ -1,13 +1,15 @@
 <template>
-  <div class="pageination" v-if="pageinationTotal">
-    <div @click="pageUp(0)" class="pagination_page" :class="startDisabled?'disabled':''">首页</div>
-    <div @click="pageUp(1)" class="pagination_page" :class="startDisabled?'disabled':''">上一页</div>
-    <div class="pagination_page" :class="item==pageinationCurrentPage?'pagination_page_active':''"
-         v-for="item in pageinationLength" @click="jump(item)">
-      {{item}}
-    </div>
-    <div @click="pageDown(1)" class="pagination_page" :class="endDisabled?'disabled':''">下一页</div>
-    <div @click="pageDown(0)" class="pagination_page pagination_page_right" :class="endDisabled?'disabled':''">尾页
+  <div class="pageination_align">
+    <div class="pageination" v-if="pageinationTotal">
+      <div @click="pageUp(0)" class="pagination_page" :class="startDisabled?'disabled':''">首页</div>
+      <div @click="pageUp(1)" class="pagination_page" :class="startDisabled?'disabled':''">上一页</div>
+      <div class="pagination_page" :class="item==pageinationCurrentPage?'pagination_page_active':''"
+           v-for="item in pageinationLength" @click="jump(item)">
+        {{item}}
+      </div>
+      <div @click="pageDown(1)" class="pagination_page" :class="endDisabled?'disabled':''">下一页</div>
+      <div @click="pageDown(0)" class="pagination_page pagination_page_right" :class="endDisabled?'disabled':''">尾页
+      </div>
     </div>
   </div>
 </template>
@@ -51,7 +53,10 @@
         //是否可以点击上一页首页
         this.startDisabled = this.pageinationCurrentPage != 1 ? false : true;
         //是否可以点击下一页尾页
+        console.log(this.pageinationPage);
         this.endDisabled = this.pageinationCurrentPage != this.pageinationPage ? false : true;
+        if(this.pageinationPage==0) this.endDisabled=true;
+
         //重置
         this.pageinationLength = [];
         //开始页码1
@@ -113,6 +118,9 @@
 </script>
 
 <style scoped>
+  .pageination_align{
+    text-align: center
+  }
   .pageination {
     color: #48576a;
     font-size: 12px;
