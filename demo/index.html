@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue"></script>
+    <style>
+        .pageination_align {
+            text-align: center
+        }
+
+        .pageination {
+            color: #48576a;
+            font-size: 12px;
+            display: inline-block;
+            user-select: none;
+        }
+
+        .pagination_page {
+            padding: 0 4px;
+            border: 1px solid #d1dbe5;
+            border-right: 0;
+            background: #fff;
+            font-size: 13px;
+            min-width: 28px;
+            height: 28px;
+            line-height: 28px;
+            cursor: pointer;
+            box-sizing: border-box;
+            text-align: center;
+            float: left;
+        }
+
+        .pagination_page_right {
+            border-right: 1px solid #d1dbe5;
+        }
+
+        .pagination_page:hover {
+            color: #20a0ff;
+        }
+
+        .disabled {
+            color: #e4e4e4 !important;
+            background-color: #fff;
+            cursor: not-allowed;
+        }
+
+        .pagination_page_active {
+            border-color: #20a0ff;
+            background-color: #20a0ff;
+            color: #fff !important;;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <pageination :total="model.total" :size="model.size" :page="model.page" :changge="pageFn" ></pageination>
+    {{model.page}}
+</div>
+<script src="js/pageination.js"></script>
+
+<script>
+  window.onload=function () {
+      var app = new Vue({
+          el: '#app',
+          data() {
+              return {
+                  model:{
+                      total:300,//总页数
+                      size:10,//每页显示条目个数不传默认10
+                      page:1,//当前页码
+                  }
+              }
+          },
+          methods:{
+              //页码切换执行方法
+              pageFn(val){
+                  this.model.page=val;
+                  console.log(val);
+              }
+          }
+      })
+  }
+
+
+</script>
+</body>
+</html>
