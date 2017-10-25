@@ -53,7 +53,6 @@
         //是否可以点击上一页首页
         this.startDisabled = this.pageinationCurrentPage != 1 ? false : true;
         //是否可以点击下一页尾页
-        console.log(this.pageinationPage);
         this.endDisabled = this.pageinationCurrentPage != this.pageinationPage ? false : true;
         if(this.pageinationPage==0) this.endDisabled=true;
 
