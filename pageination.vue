@@ -101,6 +101,10 @@
       }
     },
     created(){
+     if (this.pageIsUrl) {
+        this.pageinationCurrentPage=this.$route.query.page
+        this.pageChangge(this.pageinationCurrentPage);
+      }
       this.pageCurrentChange();
     },
     watch: {
